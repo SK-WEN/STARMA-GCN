@@ -8,6 +8,9 @@ selection=sample(c(1:dim(data)[2]),25)
 data=data[,selection]
 coordinate=coordinate[selection,]
 
+write.csv(data[,c(1,2,3,7,8,10,16,17,19)],'test_data.csv')
+write.csv(coordinate[c(1,2,3,7,8,10,16,17,19),],"test_data(coordinate).csv")
+
 scatter_point(data)
 box_plot(data)
 cor_heat_map(data)
