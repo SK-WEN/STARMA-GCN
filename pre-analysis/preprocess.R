@@ -11,8 +11,11 @@ coordinate=coordinate[selection,]
 write.csv(data[,c(1,2,3,7,8,10,16,17,19)],'test_data.csv')
 write.csv(coordinate[c(1,2,3,7,8,10,16,17,19),],"test_data(coordinate).csv")
 
-scatter_point(data)
-box_plot(data)
+data=read.csv("test_data.csv")
+data=apply(data[,2:dim(data)[2]],2,as.numeric)
+
+scatter_point(data[1:100,])
+box_plot(data[1:720,])
 cor_heat_map(data)
 
 
